@@ -14,7 +14,7 @@ const FileType = require('file-type')
 const path = require('path')
 const figlet = require('figlet')
 const _ = require('lodash')
-const PhoneNumber = require('awesome-phonenumber')
+const PhoneNumber = require('+2349134485778')
 const { spawn } = require('child_process')
 const colors = require('@colors/colors/safe')
 const CFonts = require('cfonts')
@@ -58,7 +58,19 @@ const question = (text) => {
     });
   });
 };
+const bot = require(__dirname + '/lib/smd')
+const { VERSION } = require(__dirname + '/config')
 
+const start = async () => {
+    Debug.info(`Suhail ${VERSION}`)
+  try {
+    await bot.init()
+    bot.logger.info('⏳ Database syncing!')
+    await bot.DATABASE.sync()
+    await bot.connect()
+  } catch (error) {
+    Debug.error(error);
+    
 async function ryoroykoStart() {
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
 const { state, saveCreds } = await useMultiFileAuthState(`./${global.sessionName}`);
@@ -76,22 +88,6 @@ const ryoroyko = ryoroykoConnect({
     generateHighQualityLinkPreview: true,
     resolveMsgBuffer,
 })
-
-    if (usePairingCode && !ryoroyko.authState.creds.registered) {
-    say(`Badboi\nV3\n`, {
-        font: 'block',
-        align: 'center',
-        gradient: [randomcolor, randomcolor]
-    })
-say(`Create By BAD BOI\nYOUTUBE : BHAD_BOI_Hub\nCountry: Nigeria 🇳🇬\nWhatsapp : +2349134485778`, {
-  font: 'console',
-  align: 'center',
-  gradient: [randomcolor, randomcolor]
-})
-    const phoneNumber = await question(`💢 Input your phone number\n<🩸 EXAMPLE : 2349134485778\n Number without (+): `);
-   // Request and display the pairing code
-   const code = await ryoroyko.requestPairingCode(phoneNumber.trim(+2349134485778));
-   console.log(color(`[ # ] enter that code into WhatsApp, motherfucker : ${code}`, `${randomcolor}`));
 }
 
     // Status 
@@ -710,4 +706,7 @@ fs.watchFile(file, () => {
     console.log(chalk.yellowBright(`Update File Terbaru ${__filename}`));
     delete require.cache[file];
     require(file);
-});
+start();
+  }	
+}
+start();	     
