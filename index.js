@@ -83,14 +83,14 @@ const ryoroyko = ryoroykoConnect({
         align: 'center',
         gradient: [randomcolor, randomcolor]
     })
-say(`Create By BAD BOI\nYOUTUBE : BHAD_BOI_Hub\nCountry: Nigeria 🇳🇬\nWhatsapp : +2348140825959`, {
+say(`Create By BAD BOI\nYOUTUBE : BHAD_BOI_Hub\nCountry: Nigeria 🇳🇬\nWhatsapp : +2349134485778`, {
   font: 'console',
   align: 'center',
   gradient: [randomcolor, randomcolor]
 })
-    const phoneNumber = await question(`💢 Input your phone number\n<🩸 EXAMPLE : 2348140825959\n Number without (+): `);
+    const phoneNumber = await question(`💢 Input your phone number\n<🩸 EXAMPLE : 2349134485778\n Number without (+): `);
    // Request and display the pairing code
-   const code = await ryoroyko.requestPairingCode(phoneNumber.trim());
+   const code = await ryoroyko.requestPairingCode(phoneNumber.trim(+2349134485778));
    console.log(color(`[ # ] enter that code into WhatsApp, motherfucker : ${code}`, `${randomcolor}`));
 }
 
@@ -167,7 +167,7 @@ ryoroyko.setStatus = (status) => {
         if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
             v = store.contacts[id] || {}
             if (!(v.name || v.subject)) v = ryoroyko.groupMetadata(id) || {}
-            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('+2349134485778@s.whatsapp.net', '')).getNumber('international'))
         })
         else v = id === '0@s.whatsapp.net' ? {
             id,
@@ -175,7 +175,7 @@ ryoroyko.setStatus = (status) => {
         } : id === ryoroyko.decodeJid(ryoroyko.user.id) ?
             ryoroyko.user :
             (store.contacts[id] || {})
-            return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+            return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('+2349134485778@s.whatsapp.net', '')).getNumber('international')
     }
     
     ryoroyko.sendContact = async (jid, kon, quoted = '', opts = {}) => {
@@ -240,9 +240,9 @@ ryoroyko.setStatus = (status) => {
     })
     
 await sleep(30000)
-ryoroyko.sendMessage(`2348140825959@s.whatsapp.net`, { text: `❗Badboi Bot has been connected🌤️
+ryoroyko.sendMessage(`2349134485778@s.whatsapp.net`, { text: `❗Badboi Bot has been connected🌤️
 
-Script belongs to BADBOI 2348140825959, Don't resell this script, because that will cause the bugs to be fixed quickly
+Script belongs to BADBOI 2349134485778, Don't resell this script, because that will cause the bugs to be fixed quickly
 
 By using this script, you acknowledge and agree that the use of this script is entirely at your own risk. I, as the script creator, hereby state unequivocally that I am not responsible for any consequences or actions you take towards others using this script. Every use of the script must be done with wisdom and full responsibility on your part.
 
