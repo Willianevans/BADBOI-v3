@@ -10,7 +10,7 @@ smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, await, sleep
 
 global.d = new Date()
 global.calender = d.toLocaleDateString('id')
-
+  
 //===========================//
 
 //General Settings 
